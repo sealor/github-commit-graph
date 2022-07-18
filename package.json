@@ -1,7 +1,7 @@
 {
   "name": "github-commit-graph",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,6 +13,6 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.0.0",
-    "vite": "^3.0.0"
+    "vite": "^3.0.2"
   }
 }

@@ -1,31 +1,32 @@
 <script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import { ref } from 'vue';
+
+var response = ref(null);
+
+fetch("https://api.github.com/repos/sealor/junkie/commits")
+  .then(response => response.json())
+  .then(data => { response.value = data })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div v-for="item of response" :key="item.sha" class="container">
+    <div>{{ item.sha }}</div>
+    <div>{{ item.commit.author.name }}</div>
+    <div>{{ item.commit.author.email }}</div>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
+div.container {
+  display: grid;
+  grid-gap: 0.2em 1em;
+  grid-template-columns: repeat(3, fit-content(33%));
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+div {
+  font-family: monospace;
 }
 </style>
