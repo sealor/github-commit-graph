@@ -1,7 +1,8 @@
 <script setup>
 import { ref } from 'vue';
+import CommitInfoList from './components/CommitInfoList.vue';
 
-var response = ref(null);
+var response = ref([]);
 
 fetch("https://api.github.com/repos/sealor/junkie/commits")
   .then(response => response.json())
@@ -12,21 +13,16 @@ fetch("https://api.github.com/repos/sealor/junkie/commits")
 </script>
 
 <template>
-  <div v-for="item of response" :key="item.sha" class="container">
-    <div>{{ item.sha }}</div>
-    <div>{{ item.commit.author.name }}</div>
-    <div>{{ item.commit.author.email }}</div>
-  </div>
+  <CommitInfoList :commitItemList="response" />
 </template>
 
-<style scoped>
-div.container {
-  display: grid;
-  grid-gap: 0.2em 1em;
-  grid-template-columns: repeat(3, fit-content(33%));
+<script>
+export default {
+  components: {
+    CommitInfoList,
+  },
 }
+</script>
 
-div {
-  font-family: monospace;
-}
+<style scoped>
 </style>
