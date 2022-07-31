@@ -23,5 +23,6 @@ div.commit-infos-container {
   display: grid;
   grid-gap: 0.2em 1em;
   grid-template-columns: repeat(4, fit-content(25%));
+  align-items: center;
 }
 </style>
