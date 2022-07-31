@@ -1,0 +1,32 @@
+
+div[data-v-dff74a48] {
+    font-family: monospace;
+}
+
+div.commit-infos-container[data-v-c38f4e2f] {
+  display: grid;
+  grid-gap: 0.2em 1em;
+  grid-template-columns: repeat(4, fit-content(25%));
+  align-items: center;
+}
+
+div.app-container[data-v-e458ccdd] {
+  display: grid;
+  grid-template-columns: auto max-content;
+}
+path[data-v-e458ccdd] {
+  fill: none;
+  stroke: lightcoral;
+  stroke-width: 0.8px;
+  marker-start: url(#marker);
+  marker-mid: url(#marker);
+  marker-end: url(#marker);
+}
+polyline[data-v-e458ccdd] {
+  stroke: #306f91;
+  stroke-width: 3;
+  fill: none;
+  marker-start: url(#marker);
+  marker-mid: url(#marker);
+  marker-end: url(#marker);
+}
