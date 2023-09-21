@@ -24,6 +24,8 @@ export default {
 
 <style scoped>
 div {
-    font-family: monospace;
+    font: 1.5em monospace;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 </style>
